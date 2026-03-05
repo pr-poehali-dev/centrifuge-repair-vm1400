@@ -26,9 +26,9 @@ const criticalFactors = [
 ];
 
 const results = [
-  { icon: "CheckCircle", text: "Полное восстановление работоспособности центрифуги" },
-  { icon: "BarChart3", text: "Возврат проектных количественных и качественных технологических показателей" },
-  { icon: "Clock", text: "Стабильная и безаварийная эксплуатация оборудования с ноября 2024 года" },
+  { label: "01", text: "Полное восстановление работоспособности центрифуги" },
+  { label: "02", text: "Возврат проектных количественных и качественных технологических показателей" },
+  { label: "03", text: "Стабильная и безаварийная эксплуатация оборудования с ноября 2024 года" },
 ];
 
 function useInView() {
@@ -215,35 +215,31 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-slate-900">
         <div className="container mx-auto px-6">
           <Section>
-            <div className="text-center mb-12">
-              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">Итоги</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <div className="text-center mb-16">
+              <span className="inline-block text-emerald-400 font-semibold text-sm uppercase tracking-widest mb-4">Итоги</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
                 Результат работ
               </h2>
             </div>
           </Section>
 
           <Section>
-            <div className="max-w-3xl mx-auto mb-12">
-              <div className="grid gap-4">
-                {results.map((result, i) => (
-                  <div key={i} className="flex items-start gap-4 bg-emerald-50 border border-emerald-100 rounded-xl p-5">
-                    <div className="flex-shrink-0">
-                      <Icon name={result.icon} size={24} className="text-emerald-600" />
-                    </div>
-                    <p className="text-foreground font-medium">{result.text}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden">
+              {results.map((result, i) => (
+                <div key={i} className="bg-slate-900 p-8 md:p-10 flex flex-col gap-6 hover:bg-slate-800 transition-colors duration-300">
+                  <span className="text-5xl font-bold text-emerald-400/30 font-heading leading-none">{result.label}</span>
+                  <p className="text-white text-lg font-medium leading-snug">{result.text}</p>
+                </div>
+              ))}
             </div>
           </Section>
 
           <Section>
-            <div className="max-w-3xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-10 text-white">
-              <p className="text-lg leading-relaxed text-white/85">
+            <div className="max-w-4xl mx-auto mt-10 border-t border-white/10 pt-10">
+              <p className="text-white/50 text-base leading-relaxed text-center max-w-2xl mx-auto">
                 Комплексный капитальный ремонт центрифуги позволяет продлить срок службы оборудования, восстановить эффективность технологического процесса и избежать затрат на приобретение новой машины, обеспечивая надежную работу в долгосрочной перспективе.
               </p>
             </div>
